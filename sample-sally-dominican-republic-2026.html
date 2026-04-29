@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dominican Republic — Sally's Travel Quote | PMTP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ── PMTP COLOR PALETTE ───────────────────────────────────────── */
+  :root {
+    --teal:        #75AFB1;
+    --teal-dark:   #4F8A8C;
+    --pale-teal:   #C4E4E1;
+    --gold:        #DAC396;
+    --gold-dark:   #B89E6A;
+    --cream:       #E9DEC0;
+    --cream-light: #F5EFDF;
+    --paper:       #FBF9F4;
+    --paper-pure:  #FFFFFF;
+    --ink:         #2B2420;
+    --ink-soft:    #5A524A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+  }
+
+  /* ── HERO ──────────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--teal-dark);
+  }
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.55;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(43,36,32,0.85) 0%, rgba(43,36,32,0.1) 60%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px 32px 48px;
+    max-width: 760px;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    color: var(--paper-pure);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--pale-teal);
+  }
+
+  /* ── LAYOUT ────────────────────────────────────────────────────── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section { padding: 52px 0; }
+
+  /* ── TRIP SUMMARY STRIP ────────────────────────────────────────── */
+  .summary-strip {
+    background: var(--teal-dark);
+    padding: 20px 0;
+  }
+  .summary-strip .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 32px;
+  }
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .summary-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--pale-teal);
+  }
+  .summary-value {
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: var(--paper-pure);
+  }
+
+  /* ── SECTION HEADERS ────────────────────────────────────────────── */
+  .section-header {
+    margin-bottom: 32px;
+  }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .section-intro {
+    margin-top: 12px;
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    max-width: 620px;
+    line-height: 1.7;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--cream);
+    margin: 0;
+  }
+
+  /* ── OPTION CARDS ──────────────────────────────────────────────── */
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .option-card {
+    border: 2px solid var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--paper-pure);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .option-card.selected {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--pale-teal);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background: var(--cream);
+  }
+
+  .card-body {
+    padding: 24px 26px 20px;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .card-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    white-space: nowrap;
+  }
+  .card-price-sub {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--ink-soft);
+    display: block;
+    text-align: right;
+  }
+
+  .card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+
+  .card-desc {
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .card-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .highlight-pill {
+    font-size: 0.76rem;
+    font-weight: 500;
+    padding: 4px 11px;
+    border-radius: 20px;
+    background: var(--pale-teal);
+    color: var(--teal-dark);
+  }
+
+  .card-select-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cream);
+  }
+  .card-radio {
+    width: 20px; height: 20px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .card-select-label {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* ── ADD-ONS ─────────────────────────────────────────────────────── */
+  .addons-section {
+    background: var(--cream-light);
+    border-radius: 12px;
+    padding: 28px 28px 24px;
+  }
+  .addon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .addon-intro {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .addon-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .addon-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--paper-pure);
+    border: 1px solid var(--cream);
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+  }
+  .addon-check {
+    width: 18px; height: 18px;
+    accent-color: var(--teal-dark);
+    cursor: pointer;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .addon-info { flex: 1; }
+  .addon-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .addon-desc {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .addon-price {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--teal-dark);
+    white-space: nowrap;
+  }
+
+  /* ── RUNNING TOTAL ───────────────────────────────────────────────── */
+  .total-bar {
+    background: var(--teal-dark);
+    border-radius: 10px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+  }
+  .total-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--pale-teal);
+  }
+  .total-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--paper-pure);
+  }
+  .total-note {
+    font-size: 0.75rem;
+    color: var(--pale-teal);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  /* ── PRICING COMPLIANCE BLOCK ─────────────────────────────────── */
+  .compliance-block {
+    background: var(--cream-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin-top: 28px;
+  }
+  .compliance-block p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ── DEPOSIT CALLOUT ──────────────────────────────────────────── */
+  .deposit-callout {
+    background: var(--paper-pure);
+    border: 1px solid var(--cream);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .deposit-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .deposit-text {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .deposit-text strong {
+    color: var(--ink);
+  }
+
+  /* ── CONTACT FORM ─────────────────────────────────────────────── */
+  .form-section { background: var(--cream-light); padding: 52px 0; }
+  .contact-form {
+    background: var(--paper-pure);
+    border-radius: 12px;
+    padding: 36px 32px;
+    box-shadow: 0 2px 12px rgba(43,36,32,0.07);
+  }
+  .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group.full { flex-basis: 100%; }
+  label.form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    padding: 11px 14px;
+    border: 1px solid var(--cream);
+    border-radius: 6px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 100%;
+    transition: border-color 0.15s;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+  textarea { resize: vertical; min-height: 100px; }
+
+  .selected-summary {
+    background: var(--pale-teal);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    color: var(--teal-dark);
+    line-height: 1.6;
+  }
+  .selected-summary strong { color: var(--ink); }
+
+  .submit-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background: var(--teal-dark);
+    color: var(--paper-pure);
+    border: none;
+    border-radius: 8px;
+    padding: 15px 32px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .submit-btn:hover { background: var(--teal); }
+
+  .form-success {
+    display: none;
+    background: var(--pale-teal);
+    border-radius: 8px;
+    padding: 20px 24px;
+    text-align: center;
+    color: var(--teal-dark);
+    font-weight: 500;
+    margin-top: 16px;
+  }
+
+  /* ── EDUCATIONAL SECTION ─────────────────────────────────────── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .edu-card {
+    background: var(--paper-pure);
+    border: 1px solid var(--cream);
+    border-radius: 10px;
+    padding: 22px 20px;
+  }
+  .edu-icon { font-size: 1.5rem; margin-bottom: 10px; }
+  .edu-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .edu-card-text {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 0 32px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .footer-agent {
+    font-size: 0.9rem;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .footer-contact {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .footer-contact a {
+    color: var(--pale-teal);
+    text-decoration: none;
+  }
+  .footer-fine {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: #5A524A;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .hero-content { padding: 32px 20px 40px; }
+    .card-top { flex-direction: column; gap: 6px; }
+    .card-price-sub { text-align: left; }
+    .contact-form { padding: 24px 18px; }
+    .total-bar { flex-direction: column; text-align: center; }
+    .summary-strip .container { gap: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <img class="hero-img"
+    src="https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1400&q=80"
+    alt="Caribbean beach, Dominican Republic" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Point Me to Paradise Travel — A Quote for</p>
+    <h1 class="hero-title">Sample Sally<br>in the Dominican Republic</h1>
+    <p class="hero-sub">June 8 – 18, 2026 &nbsp;·&nbsp; 10 nights &nbsp;·&nbsp; Punta Cana</p>
+  </div>
+</header>
+
+<!-- ── TRIP SUMMARY STRIP ─────────────────────────────────── -->
+<div class="summary-strip">
+  <div class="container">
+    <div class="summary-item">
+      <span class="summary-label">Destination</span>
+      <span class="summary-value">Punta Cana, Dominican Republic</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Travel Dates</span>
+      <span class="summary-value">June 8 – 18, 2026</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Duration</span>
+      <span class="summary-value">10 Nights</span>
+    </div>
+    <div class="summary-item">
+      <span class="summary-label">Trip Style</span>
+      <span class="summary-value">All-Inclusive Resort</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── INTRO ──────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Your Trip at a Glance</p>
+      <h2 class="section-title">Ten days of Caribbean sun, included.</h2>
+      <p class="section-intro">
+        Punta Cana sits on the eastern tip of Hispaniola, where the Atlantic rolls in from the right
+        and the Caribbean laps from the left — resulting in some of the most consistent beach conditions in
+        the region. Temperatures in June hold steady in the low-to-mid 80s, the water is warm and clear,
+        and the high season crowds have thinned considerably. Below are three resort options across
+        different price points and vibes. Pick one — or tell me what's pulling you toward or away from
+        any of them — and we'll lock it in.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── RESORT OPTIONS ─────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Step 1 — Choose Your Resort</p>
+      <h2 class="section-title">Three options, one beach.</h2>
+      <p class="section-intro">All three are all-inclusive. Select the one that fits — pricing is per person, double occupancy, for 10 nights.</p>
+    </div>
+
+    <div class="options-grid">
+
+      <!-- OPTION 1 -->
+      <div class="option-card" id="card-1" onclick="selectOption(1)">
+        <img class="card-image"
+          src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=900&q=80"
+          alt="Iberostar Grand Bavaro" />
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <p class="card-category">Adults-Only · 5-Star</p>
+              <h3 class="card-name">Iberostar Grand Bavaro</h3>
+            </div>
+            <div>
+              <p class="card-price">$3,290</p>
+              <span class="card-price-sub">per person</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Adults-only wing of the larger Iberostar complex on Bavaro Beach, with butler service included in every room. The beach here is wider than most — powdery white sand that stays shaded past 4pm. Food program is a step up: the Fuego Grill does a proper surf-and-turf, and the rooftop tapas bar is worth the walk up. Spa access is shared with the full complex but the adults-only pool stays quiet. The crowd skews 35–55 and the vibe is unhurried.
+          </p>
+          <div class="card-highlights">
+            <span class="highlight-pill">Butler included</span>
+            <span class="highlight-pill">Adults only</span>
+            <span class="highlight-pill">Bavaro Beach</span>
+            <span class="highlight-pill">Multiple à la carte restaurants</span>
+          </div>
+          <div class="card-select-row">
+            <input type="radio" name="resort" class="card-radio" id="radio-1" value="Iberostar Grand Bavaro — $3,290pp" onchange="selectOption(1)" />
+            <label for="radio-1" class="card-select-label">Select Iberostar Grand Bavaro</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 2 -->
+      <div class="option-card" id="card-2" onclick="selectOption(2)">
+        <img class="card-image"
+          src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=80"
+          alt="Excellence Punta Cana" />
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <p class="card-category">Adults-Only · 5-Star · Preferred</p>
+              <h3 class="card-name">Excellence Punta Cana</h3>
+            </div>
+            <div>
+              <p class="card-price">$3,850</p>
+              <span class="card-price-sub">per person</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            The Excellence brand has earned its reputation. This is a sprawling adults-only property with
+            11 pools, 11 restaurants, and a beach that goes on longer than you'll want to walk. The
+            Preferred Club tier (included here) gets you a private pool section, upgraded minibar,
+            and access to the Club lounge where breakfast runs until noon — useful when you're
+            on island time. Weddings happen here constantly, which gives the food program a
+            reason to actually try. Rooms are large and the ocean-view categories are worth it.
+          </p>
+          <div class="card-highlights">
+            <span class="highlight-pill">Preferred Club access</span>
+            <span class="highlight-pill">11 pools</span>
+            <span class="highlight-pill">11 restaurants</span>
+            <span class="highlight-pill">Adults only</span>
+            <span class="highlight-pill">Private pool section</span>
+          </div>
+          <div class="card-select-row">
+            <input type="radio" name="resort" class="card-radio" id="radio-2" value="Excellence Punta Cana — $3,850pp" onchange="selectOption(2)" />
+            <label for="radio-2" class="card-select-label">Select Excellence Punta Cana</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTION 3 -->
+      <div class="option-card" id="card-3" onclick="selectOption(3)">
+        <img class="card-image"
+          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80"
+          alt="Secrets Cap Cana Resort" />
+        <div class="card-body">
+          <div class="card-top">
+            <div>
+              <p class="card-category">Adults-Only · 5-Star · Boutique Feel</p>
+              <h3 class="card-name">Secrets Cap Cana Resort & Spa</h3>
+            </div>
+            <div>
+              <p class="card-price">$4,620</p>
+              <span class="card-price-sub">per person</span>
+            </div>
+          </div>
+          <p class="card-desc">
+            Cap Cana is a separate gated community 15 minutes south of Punta Cana airport — quieter,
+            less trafficked, and home to a marina with actual deep-sea fishing boats if that's your thing.
+            Secrets here is smaller than the Bavaro-area giants, which means you'll recognize faces at
+            breakfast by day three. The beach in front is calm — more lagoon than open Atlantic — and
+            the swim-up suites are some of the best in the country. The Unlimited-Luxury program
+            includes 24-hour room service, no reservation required at any restaurant, and nightly
+            entertainment that doesn't feel like a time-share pitch.
+          </p>
+          <div class="card-highlights">
+            <span class="highlight-pill">Cap Cana location</span>
+            <span class="highlight-pill">Swim-up suites</span>
+            <span class="highlight-pill">Marina nearby</span>
+            <span class="highlight-pill">Boutique scale</span>
+            <span class="highlight-pill">24-hr room service</span>
+          </div>
+          <div class="card-select-row">
+            <input type="radio" name="resort" class="card-radio" id="radio-3" value="Secrets Cap Cana Resort &amp; Spa — $4,620pp" onchange="selectOption(3)" />
+            <label for="radio-3" class="card-select-label">Select Secrets Cap Cana Resort &amp; Spa</label>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /options-grid -->
+
+    <!-- ── ADD-ONS ─────────────────────────────────────────── -->
+    <div style="margin-top: 44px;">
+      <div class="addons-section">
+        <h3 class="addon-title">Step 2 — Optional Add-Ons</h3>
+        <p class="addon-intro">These are priced separately and added to your total. Check anything you'd like to include.</p>
+        <div class="addon-list">
+
+          <label class="addon-item" onclick="setTimeout(updateTotal,0)">
+            <input type="checkbox" class="addon-check" id="addon-1" value="Airport Transfers (private, round-trip)" data-price="180" />
+            <div class="addon-info">
+              <p class="addon-name">Private Airport Transfers (Round-Trip)</p>
+              <p class="addon-desc">Private van from Punta Cana Airport directly to your resort and back. Avoids the shuttle shuffle and gets you to the pool faster. Typically 20–35 minutes depending on property.</p>
+            </div>
+            <span class="addon-price">+$180<br><small style="font-weight:400;color:var(--ink-soft)">per person</small></span>
+          </label>
+
+          <label class="addon-item" onclick="setTimeout(updateTotal,0)">
+            <input type="checkbox" class="addon-check" id="addon-2" value="Saona Island Catamaran Day Trip" data-price="115" />
+            <div class="addon-info">
+              <p class="addon-name">Saona Island Catamaran Day Trip</p>
+              <p class="addon-desc">Full-day excursion to Isla Saona — a protected national park island accessible only by boat. Catamaran ride out, a natural pool stop, lunch on the beach, open bar throughout. One of the most-requested day trips in the DR for a reason.</p>
+            </div>
+            <span class="addon-price">+$115<br><small style="font-weight:400;color:var(--ink-soft)">per person</small></span>
+          </label>
+
+          <label class="addon-item" onclick="setTimeout(updateTotal,0)">
+            <input type="checkbox" class="addon-check" id="addon-3" value="Deep-Sea Fishing (half-day, shared charter)" data-price="160" />
+            <div class="addon-info">
+              <p class="addon-name">Deep-Sea Fishing — Half-Day Shared Charter</p>
+              <p class="addon-desc">Out of Cap Cana Marina (or Bavaro). Goes for mahi-mahi, wahoo, and blue marlin depending on the season. Four-hour trip. Gear, bait, and light refreshments included. Most charters offer catch-and-release or the option to bring your catch back to the resort kitchen.</p>
+            </div>
+            <span class="addon-price">+$160<br><small style="font-weight:400;color:var(--ink-soft)">per person</small></span>
+          </label>
+
+          <label class="addon-item" onclick="setTimeout(updateTotal,0)">
+            <input type="checkbox" class="addon-check" id="addon-4" value="Travel Insurance (per person)" data-price="210" />
+            <div class="addon-info">
+              <p class="addon-name">Travel Insurance</p>
+              <p class="addon-desc">Comprehensive coverage: trip cancellation, medical evacuation, baggage loss, and delay. Strongly recommended for Caribbean travel in June, which sits in the early Atlantic hurricane season window. Plans are finalized and quoted at booking.</p>
+            </div>
+            <span class="addon-price">+$210<br><small style="font-weight:400;color:var(--ink-soft)">est. per person</small></span>
+          </label>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RUNNING TOTAL ─────────────────────────────────── -->
+    <div class="total-bar">
+      <div>
+        <p class="total-label">Estimated Total (per person)</p>
+        <p class="total-note">Final pricing confirmed by your advisor before booking.</p>
+      </div>
+      <div id="totalDisplay" style="text-align:right;">
+        <p class="total-amount" id="totalAmount">Est. $—</p>
+      </div>
+    </div>
+
+    <!-- ── COMPLIANCE BLOCK ──────────────────────────────── -->
+    <div class="compliance-block">
+      <p>
+        Individual hotels, transfers, and tours in your quote are priced at publicly available rates —
+        and in many cases lower than what you'd find on your own. You don't have to worry about
+        overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the
+        right property, operators we've used for years, the trip app, and a human who answers when
+        something doesn't go to plan.
+      </p>
+    </div>
+
+    <div class="deposit-callout">
+      <div class="deposit-icon">🔒</div>
+      <p class="deposit-text">
+        <strong>Low deposit to hold your spot.</strong> A $200–$500 deposit secures your booking —
+        the balance is paid closer to your travel date. No need to pay everything up front.
+      </p>
+    </div>
+
+  </div><!-- /container -->
+</section>
+
+<hr class="divider" />
+
+<!-- ── EDUCATIONAL: WHAT TO KNOW ──────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">What to Know</p>
+      <h2 class="section-title">A few things that'll make your trip easier.</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon">🛂</div>
+        <h4 class="edu-card-title">Entry Requirements</h4>
+        <p class="edu-card-text">U.S. citizens need a valid passport (6 months beyond travel). No visa required. The DR charges a $10 tourist card, now included in most airfares automatically — confirm with your airline.</p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">🌧️</div>
+        <h4 class="edu-card-title">June Weather</h4>
+        <p class="edu-card-text">Highs in the low 80s°F. June is technically rainy season, but showers tend to be short and intense — 20 minutes, then gone. Rarely does weather cancel a beach day. It's also early hurricane season; travel insurance is worth it.</p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">💵</div>
+        <h4 class="edu-card-title">Money on the Ground</h4>
+        <p class="edu-card-text">All-inclusive means drinks, food, and most activities are covered. Budget $10–$20/day in USD for tips (bartenders, room attendants), plus any off-resort excursions or spa treatments.</p>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">✈️</div>
+        <h4 class="edu-card-title">Getting There</h4>
+        <p class="edu-card-text">Punta Cana Airport (PUJ) has direct service from most major U.S. hubs. Flight time from the East Coast is roughly 3–4 hours. Flights are not included in this quote — ask me about current pricing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── CONTACT FORM ────────────────────────────────────────── -->
+<section class="form-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Step 3 — Let's Talk</p>
+      <h2 class="section-title">Ready to move forward?</h2>
+      <p class="section-intro">Submit your selection below and Shirley will follow up within one business day to confirm pricing, availability, and next steps.</p>
+    </div>
+
+    <div class="contact-form">
+
+      <div class="selected-summary" id="selectedSummary">
+        <strong>Your selections will appear here</strong> once you choose a resort above.
+      </div>
+
+      <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2c19d37d-d74e-4204-9871-a4197bb2dc2f" />
+        <input type="hidden" name="subject" value="Quote Request — Sample Sally — Dominican Republic 2026" />
+        <input type="hidden" name="from_name" value="PMTP Quote Form" />
+        <input type="hidden" id="hidden_resort" name="Selected Resort" value="" />
+        <input type="hidden" id="hidden_addons" name="Selected Add-Ons" value="None" />
+        <input type="hidden" id="hidden_total" name="Estimated Total (per person)" value="" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f_name">First Name</label>
+            <input type="text" id="f_name" name="First Name" placeholder="Sally" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f_last">Last Name</label>
+            <input type="text" id="f_last" name="Last Name" placeholder="Sample" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="f_email">Email</label>
+            <input type="email" id="f_email" name="Email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f_phone">Phone</label>
+            <input type="tel" id="f_phone" name="Phone" placeholder="(555) 555-5555" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label class="form-label" for="f_notes">Questions or Notes</label>
+            <textarea id="f_notes" name="Notes" placeholder="Anything I should know — room preferences, dietary needs, questions about any of the options…"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Send My Selections to Shirley →</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        ✅ Got it! Shirley will be in touch within one business day.
+      </div>
+
+    </div><!-- /contact-form -->
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p class="footer-logo">Point Me to Paradise Travel</p>
+    <p class="footer-agent">Shirley Hilton, Travel Advisor</p>
+    <p class="footer-contact">
+      <span id="phoneDisplay">(409) 392-4946</span>
+      &nbsp;·&nbsp;
+      <a href="#" id="emailLink">Email Shirley</a>
+    </p>
+    <p class="footer-fine">
+      Pricing shown is estimated and subject to availability at time of booking. Final pricing confirmed in writing by your advisor before any deposit is charged.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // ── Email assembly (Cloudflare-safe) ──────────────────────
+  (function() {
+    var user = 'Shirley.ParadisePlanner';
+    var domain = 'gmail.com';
+    var addr = user + '@' + domain;
+    var el = document.getElementById('emailLink');
+    el.href = 'mailto:' + addr;
+    el.textContent = addr;
+  })();
+
+  // ── Option selection ──────────────────────────────────────
+  var resortPrices = { 1: 3290, 2: 3850, 3: 4620 };
+  var resortNames  = {
+    1: 'Iberostar Grand Bavaro — $3,290pp',
+    2: 'Excellence Punta Cana (Preferred Club) — $3,850pp',
+    3: 'Secrets Cap Cana Resort & Spa — $4,620pp'
+  };
+  var selectedResort = null;
+
+  function selectOption(n) {
+    selectedResort = n;
+    [1,2,3].forEach(function(i) {
+      document.getElementById('card-' + i).classList.toggle('selected', i === n);
+    });
+    var radio = document.getElementById('radio-' + n);
+    radio.checked = true;
+    document.getElementById('hidden_resort').value = resortNames[n];
+    updateTotal();
+  }
+
+  // ── Running total ─────────────────────────────────────────
+  function updateTotal() {
+    if (!selectedResort) {
+      document.getElementById('totalAmount').textContent = 'Est. $—';
+      updateSummary();
+      return;
+    }
+    var base = resortPrices[selectedResort];
+    var addonTotal = 0;
+    var addonNames = [];
+    [1,2,3,4].forEach(function(i) {
+      var cb = document.getElementById('addon-' + i);
+      if (cb && cb.checked) {
+        addonTotal += parseInt(cb.getAttribute('data-price'), 10);
+        addonNames.push(cb.value);
+      }
+    });
+    var total = base + addonTotal;
+    var formatted = 'Est. $' + total.toLocaleString();
+    document.getElementById('totalAmount').textContent = formatted;
+    document.getElementById('hidden_total').value = formatted;
+    document.getElementById('hidden_addons').value = addonNames.length ? addonNames.join(', ') : 'None';
+    updateSummary(base, addonTotal, total, addonNames);
+  }
+
+  function updateSummary(base, addonTotal, total, addonNames) {
+    var el = document.getElementById('selectedSummary');
+    if (!selectedResort) {
+      el.innerHTML = '<strong>Your selections will appear here</strong> once you choose a resort above.';
+      return;
+    }
+    var html = '<strong>Selected Resort:</strong> ' + resortNames[selectedResort] + '<br>';
+    if (addonNames && addonNames.length) {
+      html += '<strong>Add-Ons:</strong> ' + addonNames.join(', ') + '<br>';
+    }
+    html += '<strong>Estimated Total (per person):</strong> $' + total.toLocaleString();
+    el.innerHTML = html;
+  }
+
+  // ── Form submission ───────────────────────────────────────
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var data = new FormData(form);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    }).then(function(r) { return r.json(); }).then(function(resp) {
+      if (resp.success) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        alert('Something went wrong. Please email Shirley directly.');
+      }
+    }).catch(function() {
+      alert('Submission failed. Please email Shirley directly.');
+    });
+  });
+</script>
+
+</body>
+</html>
