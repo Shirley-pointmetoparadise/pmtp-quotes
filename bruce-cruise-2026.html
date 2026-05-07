@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cruise Options — Mike Bruce | July 2026 | Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e45;
+    --navy-light: #243d56;
+    --teal: #2a9d8f;
+    --teal-light: #52b5a8;
+    --teal-pale: #e8f5f3;
+    --gold: #e8a030;
+    --gold-pale: #fdf3e3;
+    --white: #f8f9fa;
+    --off-white: #f0f2f4;
+    --text: #1a2535;
+    --text-mid: #3d526a;
+    --text-light: #6b7f96;
+    --border: #d5dde5;
+    --card-shadow: 0 4px 24px rgba(13,27,42,0.10);
+    --card-shadow-hover: 0 8px 40px rgba(13,27,42,0.18);
+    --transition: all 0.25s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    padding: 0;
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .brand {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: white;
+  }
+  .brand-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+  .advisor-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+  }
+  .advisor-pill strong { color: white; }
+
+  .hero {
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(42,157,143,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--teal-light);
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.65);
+  }
+  .meta-icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+  }
+
+  /* ===== COMMITMENT BANNER ===== */
+  .commitment-banner {
+    background: var(--teal);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .commitment-banner p {
+    color: white;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .commitment-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+
+  /* ===== SECTION HEADS ===== */
+  .section-head {
+    margin-bottom: 32px;
+  }
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .section-sub {
+    margin-top: 8px;
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    max-width: 600px;
+  }
+
+  /* ===== SAILING CARDS ===== */
+  .sailings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .sailing-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: var(--transition);
+  }
+  .sailing-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .sailing-header {
+    background: var(--navy);
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sailing-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+  }
+  .sailing-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: white;
+    line-height: 1.1;
+  }
+  .sailing-ship {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+  }
+  .sailing-dates-pill {
+    background: var(--teal);
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .sailing-dates-pill .date-main {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+  }
+  .sailing-dates-pill .date-nights {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+  }
+
+  .sailing-details {
+    padding: 20px 28px;
+    background: var(--navy-mid);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .sailing-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+  }
+  .sailing-detail-item strong {
+    color: white;
+  }
+  .detail-sep {
+    width: 1px;
+    height: 16px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .sailing-body {
+    padding: 28px;
+  }
+
+  .itinerary-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .itinerary-icon {
+    width: 36px; height: 36px;
+    background: var(--teal-pale);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .itinerary-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 2px;
+  }
+  .itinerary-stops {
+    font-size: 0.92rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ===== CABIN OPTIONS ===== */
+  .cabin-options-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .cabin-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 560px) {
+    .cabin-options { grid-template-columns: 1fr; }
+  }
+
+  .cabin-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    transition: var(--transition);
+    background: var(--white);
+  }
+  .cabin-card:hover {
+    border-color: var(--teal);
+    background: var(--teal-pale);
+  }
+  .cabin-type {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .cabin-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cabin-price-label {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  .cabin-meta {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+  .cabin-meta .due-tag {
+    display: inline-block;
+    background: var(--gold-pale);
+    color: var(--navy-mid);
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  /* note badge for data anomalies */
+  .data-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fff8ec;
+    border: 1px solid #f0c060;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: var(--navy-mid);
+    line-height: 1.5;
+  }
+  .data-note-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+  /* ===== PRICING COMMITMENT ===== */
+  .pricing-commitment {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 48px 0 12px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .pc-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .pc-text {
+    flex: 1;
+    min-width: 240px;
+  }
+  .pc-text p {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .pc-disclaimer {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ===== CLOSING CTA ===== */
+  .closing-cta {
+    background: var(--teal-pale);
+    border: 1.5px solid var(--teal-light);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 48px 0 32px;
+  }
+  .closing-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .closing-cta-text {
+    color: var(--text-mid);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    max-width: 680px;
+  }
+
+  /* ===== CONTACT FORM ===== */
+  .contact-section {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border);
+    padding: 40px;
+    margin-top: 16px;
+  }
+  .form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .form-sub {
+    color: var(--text-mid);
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group textarea {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--off-white);
+    transition: var(--transition);
+    outline: none;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(42,157,143,0.12);
+  }
+  .form-group textarea { min-height: 110px; }
+  .form-submit {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-submit {
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.02em;
+  }
+  .btn-submit:hover {
+    background: var(--teal-light);
+    transform: translateY(-1px);
+  }
+  .btn-submit:active { transform: translateY(0); }
+  .form-note {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .success-message {
+    display: none;
+    background: var(--teal-pale);
+    border: 1.5px solid var(--teal-light);
+    border-radius: 12px;
+    padding: 24px 28px;
+    text-align: center;
+  }
+  .success-message .success-icon { font-size: 2rem; margin-bottom: 10px; }
+  .success-message p {
+    color: var(--navy);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .success-message small {
+    color: var(--text-mid);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    margin-top: 60px;
+  }
+  .site-footer strong { color: rgba(255,255,255,0.8); }
+  .site-footer a { color: var(--teal-light); text-decoration: none; }
+
+  /* ===== UTILITY ===== */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+  }
+
+  @media (max-width: 768px) {
+    .header-top { padding: 16px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero { padding: 36px 20px 32px; }
+    .commitment-banner { padding: 18px 20px; }
+    .main { padding: 32px 16px; }
+    .sailing-body { padding: 20px; }
+    .sailing-header { padding: 20px; }
+    .sailing-details { padding: 14px 20px; }
+    .pricing-commitment { padding: 24px 20px; }
+    .closing-cta { padding: 24px 20px; }
+    .contact-section { padding: 28px 20px; }
+  }
+
+  /* ===== ANIMATION ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .sailing-card {
+    animation: fadeUp 0.5s ease both;
+  }
+  .sailing-card:nth-child(1) { animation-delay: 0.05s; }
+  .sailing-card:nth-child(2) { animation-delay: 0.10s; }
+  .sailing-card:nth-child(3) { animation-delay: 0.15s; }
+  .sailing-card:nth-child(4) { animation-delay: 0.20s; }
+  .sailing-card:nth-child(5) { animation-delay: 0.25s; }
+  .sailing-card:nth-child(6) { animation-delay: 0.30s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="brand">
+      <div class="brand-name">Point Me to Paradise Travel</div>
+      <div class="brand-tagline">Independent Travel Advisors</div>
+    </div>
+    <div class="advisor-pill">Your advisor: <strong>Shirley Hilton</strong></div>
+  </div>
+  <div class="hero">
+    <div class="hero-label">Cruise Quote · July 2026</div>
+    <h1 class="hero-title">Six sailings,<br><em>one decision.</em></h1>
+    <p style="color:rgba(255,255,255,0.6); font-size:0.9rem; max-width:520px; margin-top:12px;">Here's every option laid out so you can compare them side-by-side — ships, ports, nights, and cabin pricing — without hunting through booking sites.</p>
+    <div class="hero-meta">
+      <div class="meta-item"><div class="meta-icon">👤</div> Mike Bruce</div>
+      <div class="meta-item"><div class="meta-icon">🗓️</div> July 2026</div>
+      <div class="meta-item"><div class="meta-icon">🚢</div> 6 Sailings</div>
+      <div class="meta-item"><div class="meta-icon">⚓</div> All from Galveston, TX</div>
+    </div>
+  </div>
+  <div class="commitment-banner">
+    <div class="commitment-icon">✦</div>
+    <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+  <div class="section-head">
+    <div class="section-label">Your Options</div>
+    <h2 class="section-title">Six sailings to consider</h2>
+    <p class="section-sub">All departing from Galveston. Prices shown are total for the booking. Cabin details and payment schedules below each sailing.</p>
+  </div>
+
+  <div class="sailings-grid">
+
+    <!-- ===== SAILING A — CARNIVAL BREEZE, 4 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing A · Carnival</div>
+          <div class="sailing-name">Carnival Breeze</div>
+          <div class="sailing-ship">Galveston → Cozumel → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 9 – Jul 13, 2026</div>
+          <div class="date-nights">4 nights</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>Carnival</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>1 stop: <strong>Cozumel</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Cozumel → Galveston. A tight four nights — one day at sea each direction with a full day in Cozumel's turquoise shallows. Good entry-level sailing if you want Caribbean water without a week away.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$1,864</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 6/2/26</span><br>
+              Deposit: $340 due at booking
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$2,446</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 6/2/26</span><br>
+              Deposit details: contact advisor
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SAILING B — CARNIVAL BREEZE, 5 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing B · Carnival</div>
+          <div class="sailing-name">Carnival Breeze</div>
+          <div class="sailing-ship">Galveston → Cozumel & Progreso → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 4 – Jul 9, 2026</div>
+          <div class="date-nights">5 nights · confirmed</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>Carnival</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>2 stops: <strong>Cozumel & Progreso</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Cozumel → Progreso → Galveston. Same ship as Sailing A but a night longer and one extra port — Progreso is quieter than Cozumel, a Yucatán port town worth a half day and a fish taco lunch.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$2,028</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 5/30/26</span><br>
+              Deposit: $340 due at booking
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$2,590</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 5/30/26</span><br>
+              Deposit: $388 due at booking
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SAILING C — CARNIVAL JUBILEE, 7 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing C · Carnival</div>
+          <div class="sailing-name">Carnival Jubilee</div>
+          <div class="sailing-ship">Galveston → Isla Tropical · Roatán · Costa Maya · Cozumel → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 4 – Jul 11, 2026</div>
+          <div class="date-nights">7 nights</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>Carnival</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>3 stops: <strong>Isla Tropical · Roatán / Costa Maya · Cozumel</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Isla Tropical → Roatán / Costa Maya → Cozumel → Galveston. The Jubilee is Carnival's newest large ship. Three ports across a full week — Roatán has accessible barrier reef snorkeling; Costa Maya is quieter, good for ruins and cenotes. Most ports per night of any sailing in this comparison.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$2,712</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 5/30/26</span><br>
+              Deposit: $488 due at booking
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$3,152</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 5/30/26</span><br>
+              Deposit: $528 due at booking
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SAILING D — CARNIVAL DREAM, 8 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing D · Carnival</div>
+          <div class="sailing-name">Carnival Dream</div>
+          <div class="sailing-ship">Galveston → Key West · Celebration Key · Half Moon Cay · Nassau → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 25 – Aug 2, 2026</div>
+          <div class="date-nights">8 nights</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>Carnival</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>4 stops: <strong>Key West · Celebration Key · Half Moon Cay · Nassau</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Key West → Celebration Key → Half Moon Cay → Nassau → Galveston. The longest and most port-dense sailing here — eight nights covering Bahamas and the Keys. Celebration Key is Carnival's new private island. Half Moon Cay is Holland America's private island but Carnival has access — beaches and chairs without the port-day crowds of Nassau.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$2,978</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 6/19/26</span><br>
+              Deposit: $488 due at booking
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$4,252</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full due 6/19/26</span><br>
+              Deposit: $608 due at booking
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SAILING E — MSC SEASCAPE, 7 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing E · MSC</div>
+          <div class="sailing-name">MSC Seascape</div>
+          <div class="sailing-ship">Galveston → Costa Maya · Isla de Roatán · Cozumel → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 5 – Jul 12, 2026</div>
+          <div class="date-nights">7 nights</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>MSC Cruises</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>3 stops: <strong>Costa Maya · Isla de Roatán · Cozumel</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Costa Maya → Isla de Roatán → Cozumel → Galveston. The MSC option — the Seascape is newer construction, Italian-built, and tends to run quieter onboard than comparable Carnival ships. Full payment due at booking makes this a lower-friction booking if you're ready to commit now.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$1,609.58</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full payment due at booking</span>
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$1,915.58</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full payment due at booking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SAILING F — ROYAL CARIBBEAN MARINER, 4 nights ===== -->
+    <div class="sailing-card">
+      <div class="sailing-header">
+        <div>
+          <div class="sailing-badge">⚓ Sailing F · Royal Caribbean</div>
+          <div class="sailing-name">Mariner of the Seas</div>
+          <div class="sailing-ship">Galveston → Cozumel → Galveston</div>
+        </div>
+        <div class="sailing-dates-pill">
+          <div class="date-main">Jul 30 – Aug 3, 2026</div>
+          <div class="date-nights">4 nights · confirmed</div>
+        </div>
+      </div>
+      <div class="sailing-details">
+        <div class="sailing-detail-item">🚢 <span>Royal Caribbean</span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">⚓ <span>Departs <strong>Galveston, TX</strong></span></div>
+        <div class="detail-sep"></div>
+        <div class="sailing-detail-item">🏝️ <span>1 stop: <strong>Cozumel</strong></span></div>
+      </div>
+      <div class="sailing-body">
+        <div class="itinerary-line">
+          <div class="itinerary-icon">🗺️</div>
+          <div>
+            <div class="itinerary-label">Itinerary</div>
+            <div class="itinerary-stops">Galveston → Cozumel → Galveston. Four nights on Royal Caribbean's Mariner — tight itinerary with one port, but RC's onboard amenities (flow rider, rock climbing wall, specialty dining) give it more to do on sea days than a comparably sized Carnival ship. Full payment due at booking.</div>
+          </div>
+        </div>
+        <div class="cabin-options-label">Cabin Options</div>
+        <div class="cabin-options">
+          <div class="cabin-card">
+            <div class="cabin-type">🛏 Interior</div>
+            <div class="cabin-price">$1,990.74</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full payment due at booking</span>
+            </div>
+          </div>
+          <div class="cabin-card">
+            <div class="cabin-type">🏖 Balcony</div>
+            <div class="cabin-price">$3,195.74</div>
+            <div class="cabin-price-label">total booking</div>
+            <div class="cabin-meta">
+              <span class="due-tag">Full payment due at booking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /sailings-grid -->
+
+  <!-- PRICING COMMITMENT -->
+  <div class="pricing-commitment">
+    <div class="pc-icon">💰</div>
+    <div class="pc-text">
+      <p>We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+      <p class="pc-disclaimer">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CLOSING CTA -->
+  <div class="closing-cta">
+    <div class="closing-cta-title">What comes after you pick one</div>
+    <p class="closing-cta-text">A destination guide built for your trip — PDF or interactive in-app, with Google Maps links to every place we send you — a trip app where everything lives, and us when something goes sideways at midnight. You travel; we handle the rest.</p>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-section">
+    <h2 class="form-title">Ready to move forward?</h2>
+    <p class="form-sub">Questions, preferences, ready to book — drop it here and Shirley will be back with you quickly.</p>
+
+    <div id="form-wrapper">
+      <form id="quote-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="2c19d37d-d74e-4204-9871-a4197bb2dc2f">
+        <input type="hidden" name="subject" value="New quote response from Mike Bruce — Cruise July 2026">
+        <input type="hidden" name="redirect" value="false">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Optional">
+          </div>
+          <div class="form-group">
+            <label for="sailing">Which sailing are you interested in?</label>
+            <input type="text" id="sailing" name="sailing" placeholder="e.g. Sailing C — Carnival Jubilee">
+          </div>
+          <div class="form-group full">
+            <label for="message">Questions or Notes</label>
+            <textarea id="message" name="message" placeholder="Anything you'd like to know, cabin preferences, timing questions…"></textarea>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Send to Shirley →</button>
+          <p class="form-note">Goes straight to Shirley. No spam, no third-party sharing.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="success-message" id="success-msg">
+      <div class="success-icon">✅</div>
+      <p>Got it — Shirley will be in touch soon.</p>
+      <small>Check your inbox (and spam folder) for a confirmation copy.</small>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Quote prepared by <strong>Shirley Hilton</strong> · Point Me to Paradise Travel</p>
+  <p style="margin-top:4px;">
+    <a href="mailto:Shirley.ParadisePlanner@gmail.com">Shirley.ParadisePlanner@gmail.com</a> &nbsp;·&nbsp;
+    <span>409-392-4946</span>
+  </p>
+  <p style="margin-top:8px; font-size:0.72rem;">Pricing and availability subject to change until fully booked. Final pricing confirmed by your advisor.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('quote-form');
+  const successMsg = document.getElementById('success-msg');
+  const formWrapper = document.getElementById('form-wrapper');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const resp = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const result = await resp.json();
+      if (result.success) {
+        formWrapper.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        btn.textContent = 'Send to Shirley →';
+        btn.disabled = false;
+        alert('Something went wrong — please email Shirley directly at Shirley.ParadisePlanner@gmail.com');
+      }
+    } catch(err) {
+      btn.textContent = 'Send to Shirley →';
+      btn.disabled = false;
+      alert('Connection error — please email Shirley directly at Shirley.ParadisePlanner@gmail.com');
+    }
+  });
+</script>
+
+</body>
+</html>
